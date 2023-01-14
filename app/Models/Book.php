@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name', 'isbn', 'value'
+    ];
+
+    public static $rules = [
+        'name' => 'required|string',
+        'isbn' => 'numeric',
+        'value' => 'numeric'
+    ];
 }
